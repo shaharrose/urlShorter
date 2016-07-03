@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Error</title>
+<style type="text/css">
+    .button
+    {
+        font-family: scienceFair;
+        background-color:#c52929;
+        color:#EEEEEE;
+        width:80px;
+        height:40px;
+    }
+</style>
+<style>
+@font-face {
+   font-family: scienceFair;
+   src: url(sfFont.otf);
+}
+
+div {
+   font-family: scienceFair;
+}
+</style>
+<script>
+function goBack() {
+	history.go(-1);
+ }
+</script>
+</head>
+<body bgcolor="E0E0E0">
+<div align="center">
+
+<font color=#c52929>
+    <h1>Error</h1><br>
+	<h2>%s</h2>
+	<button class="button" onclick="goBack()">Return</button>
+</font>
+</div>
+</body>
+</html>

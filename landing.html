@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>welcome</title>
+<style type="text/css">
+    .button
+    {
+        font-family: scienceFair;
+        background-color:#1565C0;
+        color:#EEEEEE;
+        width:80px;
+        height:40px;
+    }
+</style>
+<style>
+@font-face {
+   font-family: scienceFair;
+   src: url(sfFont.otf);
+}
+
+div {
+   font-family: scienceFair;
+}
+</style>
+<script>
+function makeHttpObject() {
+  try {return new XMLHttpRequest();}
+  catch (error) {}
+  try {return new ActiveXObject("Msxml2.XMLHTTP");}
+  catch (error) {}
+  try {return new ActiveXObject("Microsoft.XMLHTTP");}
+  catch (error) {}
+
+  throw new Error("Could not create HTTP request object.");
+}
+
+function generate()
+{
+	var request = makeHttpObject();
+	request.open("GET", "HOSTLOC/generate", true);
+	request.send(null);
+	request.onreadystatechange = function() {
+	if (request.readyState == 4)
+		document.getElementById("chosenURL").value=request.responseText;
+	};
+}
+</script>
+</head>
+<body bgcolor="E0E0E0">
+<div align="center">
+
+<font color=#1565C0>
+    <h1>Landing Page</h1><br>
+    <h1>Welcome to my link shortner:</h1>
+	<h2>a small, open-source link shortner</h2>
+    <h3>by Shahar Rosenberg</h3>
+	
+	<form action='HOSTLOC'>
+		new link<input type="text" name="source" placeholder="kul" id="chosenURL"><br>
+		url to be shortened<input type="text" name="target" placeholder="www.9gag.com"><br>
+		<table><tr><td><input type="submit" class="button"></td><td><button type="button" class="button" onclick="generate()">generate link</button></td></tr></table>
+	</form>
+</font>
+</div>
+</body>
+</html>
