@@ -1,3 +1,5 @@
+# URL shorting service
+# Shahar Rosenberg, 03/07/2016
 import urllib
 from random import randint
 
